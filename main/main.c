@@ -7,7 +7,7 @@
 volatile int count=0;
 volatile int alarmDegre=2400;
 
-void changeDegre(){
+void changeDegree(){
     if(count<100){
         alarmDegre=2400;
     }
@@ -21,7 +21,7 @@ void changeDegre(){
 }
 
 void pulse(gptimer_handle_t timer,const gptimer_alarm_event_data_t *edata){
-    changeDegre();
+    changeDegree();
     if(count%2==0){
         gpio_set_level(GPIO_PIN_NUM,0);
         gptimer_alarm_config_t alarm_config={
